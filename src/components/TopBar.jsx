@@ -38,6 +38,10 @@ const AppBar = styled(MuiAppBar, {
           easing: theme.transitions.easing.sharp,
           duration: theme.transitions.duration.enteringScreen,
         }),
+        [theme.breakpoints.down("md")]: {
+          marginLeft: 0,
+          width: "100%",
+        },
       },
     },
   ],

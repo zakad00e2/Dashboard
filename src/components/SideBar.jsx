@@ -11,6 +11,7 @@ import {
   Tooltip,
   Typography,
   useTheme,
+  useMediaQuery,
 } from "@mui/material";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
@@ -122,9 +123,10 @@ function SideBar({ open, handleDrawerClose }) {
   const location = useLocation();
   const navigate = useNavigate();
   const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
-  return (
-    <Drawer variant="permanent" open={open}>
+  const drawerContent = (
+    <>
       <DrawerHeader>
         <IconButton onClick={handleDrawerClose}>
           {theme.direction === "rtl" ? (
@@ -353,6 +355,30 @@ function SideBar({ open, handleDrawerClose }) {
           </ListItem>
         ))}
       </List>
+    </>
+  );
+
+  if (isMobile) {
+    return (
+      <MuiDrawer
+        variant="temporary"
+        open={open}
+        onClose={handleDrawerClose}
+        ModalProps={{
+          keepMounted: true, // Better open performance on mobile.
+        }}
+        sx={{
+          "& .MuiDrawer-paper": { boxSizing: "border-box", width: drawerWidth },
+        }}
+      >
+        {drawerContent}
+      </MuiDrawer>
+    );
+  }
+
+  return (
+    <Drawer variant="permanent" open={open}>
+      {drawerContent}
     </Drawer>
   );
 }

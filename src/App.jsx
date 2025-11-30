@@ -21,7 +21,7 @@ const DrawerHeader = styled("div")(({ theme }) => ({
 }));
 
 export default function MiniDrawer() {
-  const [mode, setMode] = useState(localStorage.getItem("theme") || "light");
+  const [mode, setMode] = useState(localStorage.getItem("theme") || "dark");
   const theme = useMemo(() => themeSettings(mode), [mode]);
   const toggleMode = () => {
     setMode((prevMode) => (prevMode === "light" ? "dark" : "light"));

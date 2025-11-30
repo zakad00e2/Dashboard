@@ -33,7 +33,7 @@ function Row3() {
   const theme = useTheme();
   return (
     <Stack direction="row" gap={1} flexWrap="wrap" justifyContent="center">
-      <Paper sx={{ minWidth: 460, height: 400, padding: 2 , width: { xs: '100%', lg: 460 } }}>
+      <Paper sx={{ minWidth: "280px", height: 400, padding: 2 , width: { xs: '100%', lg: 460 }, flexGrow: 1 }}>
         <Typography color={theme.palette.secondary.main} fontSize={20}>
           {" "}
           Campaign{" "}
@@ -176,7 +176,7 @@ function Row3() {
         />
       </Paper>
 
-      <Paper sx={{ minWidth: 460, height: 400, padding: 2 , width: { xs: '100%', lg: 460 } }}>
+      <Paper sx={{ minWidth: "280px", height: 400, padding: 2 , width: { xs: '100%', lg: 460 }, flexGrow: 1 }}>
         <Typography color={theme.palette.secondary.main} fontSize={20}>
           {" "}
           Campaign{" "}
@@ -184,7 +184,7 @@ function Row3() {
       <Bar isDashboard={true}/>
       </Paper>
 
-      <Paper sx={{ minWidth: 460, height: 400, padding: 2 , width: { xs: '100%', lg: 460 } }}>
+      <Paper sx={{ minWidth: "280px", height: 400, padding: 2 , width: { xs: '100%', lg: 460 }, flexGrow: 1 }}>
         <Typography color={theme.palette.secondary.main} fontSize={20}>
           {" "}
           Campaign{" "}
